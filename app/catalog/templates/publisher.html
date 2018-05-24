@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Publisher Display</title>
+</head>
+<body>
+{% block content %}
+    <div class="container publisher">
+        <h4> Books by {{ publisher.name }}</h4>
+            <ol>
+                {% for novel in publisher_books %}
+                <li type="1">
+                {{ novel.title }} by {{ novel.author}}
+                </li>
+                {% endfor %}
+            </ol>
+    </div>
+{% endblock content %}
+</body>
+</html>
