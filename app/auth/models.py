@@ -15,8 +15,7 @@ class User(UserMixin, db.Model):
     registration_date = db.Column(db.DateTime, default=datetime.now)
 
     def check_password(self, password):
-        return  bcrypt.check_password_hash(self.user_password, password)
-
+        return bcrypt.check_password_hash(self.user_password, password)
 
     # class methods belong to a class but are not associated with any class instance
     @classmethod
